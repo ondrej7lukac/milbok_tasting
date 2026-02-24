@@ -383,7 +383,9 @@ body {
 }
 
 .hot-choc-bg {
-  background: linear-gradient(145deg, #2d0e00 0%, #5c2100 35%, #8b3a1a 65%, #3d1200 100%);
+  background-image: url('./hotchoco.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ===== BARISTA TIPS ===== */
