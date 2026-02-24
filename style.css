@@ -1,0 +1,1274 @@
+/* ... existing styles ... */
+:root {
+  --primary-blue: #0047AB;
+  --primary-dark: #002E7A;
+  --accent-light: #E6F0FF;
+  --text-main: #1A1A1A;
+  --text-muted: #666666;
+  --white: #FFFFFF;
+  --bg-light: #F8F9FA;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --font-main: 'Inter', sans-serif;
+  --spacing-unit: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Header */
+.header {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 1rem;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo {
+  font-weight: 900;
+  color: var(--primary-blue);
+  font-size: 1.8rem;
+  letter-spacing: -0.05em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.sub-logo {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: auto;
+  pointer-events: auto;
+  position: relative;
+  z-index: 101;
+}
+
+.switch-group {
+  background: #f0f0f0;
+  padding: 0.25rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.switch-btn {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.switch-btn:hover {
+  color: var(--text-main);
+}
+
+.switch-btn.active {
+  background: var(--white);
+  color: var(--primary-blue);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Landing Hero Section */
+.landing-hero {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  gap: 4rem;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.landing-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.landing-image {
+  flex: 1;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.landing-kicker {
+  color: var(--primary-blue);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.landing-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+/* Features Icons */
+.features-grid {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 80px;
+}
+
+.feature-icon {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.feature-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #333;
+}
+
+/* Learn More Link */
+.learn-more-link {
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.learn-more-link:hover {
+  opacity: 0.8;
+}
+
+/* Image styling */
+.milbok-carton-bg {
+  background: linear-gradient(135deg, #1c1c1c 0%, #333 100%);
+  position: relative;
+}
+
+.milbok-carton-bg::after {
+  content: "MILBOK";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+/* Section Header for the Grid below */
+.section-header {
+  text-align: left;
+  max-width: 1200px;
+  margin: 3rem auto 3rem;
+  /* Balanced top/bottom margin */
+  padding: 0 2rem;
+}
+
+.section-header .hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #111;
+  margin: 0;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  /* ... existing header styles ... */
+  .controls {
+    order: 3;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .nav {
+    margin-left: auto;
+  }
+
+  .landing-hero {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .landing-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .features-grid {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .landing-image {
+    width: 100%;
+    height: 350px;
+  }
+
+  .landing-title {
+    font-size: 2.5rem;
+  }
+
+  /* Revert card layout to column on smaller screens */
+  .card {
+    flex-direction: column;
+  }
+
+  .card-image-container {
+    width: 100%;
+    height: 350px;
+  }
+
+  .card-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .controls {
+    margin-left: auto;
+    margin-right: 0;
+    width: auto;
+    order: 1;
+    margin-top: 0;
+  }
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  /* Desktop: side-by-side */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.card-image-container {
+  width: 40%;
+  /* Desktop width */
+  height: auto;
+  min-height: 100%;
+  background-color: var(--accent-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center bottom;
+  /* Aligned to bottom */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ... existing hover styles ... */
+
+/* Placeholder gradients/colors */
+.dirty-coffee-bg {
+  background-image: url('./dirty_coffee.jpg');
+}
+
+.flat-white-bg {
+  background-image: url('./flat_double_white.jpg');
+}
+
+.matcha-bg {
+  background-image: url('./matcha_double_white.jpg');
+}
+
+.cold-brew-bg {
+  background-image: url('./coldbrew_with_milbokfoam.jpg');
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.badge.tip {
+  background: #FFD700;
+  color: #333;
+}
+
+.card-content {
+  padding: 2rem;
+  width: 60%;
+  /* Desktop width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center content vertically if needed */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.card-description {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.recipe-box {
+  background: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.recipe-box h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.recipe-box ul {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.recipe-box li {
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: auto;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--white);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid #eee;
+}
+
+/* Implementation Section */
+#implementation {
+  padding-bottom: 4rem;
+  background-color: var(--white);
+}
+
+.impl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.impl-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.impl-card {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+  position: relative;
+}
+
+.impl-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+}
+
+.impl-card-desc {
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.impl-highlight {
+  display: inline-block;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.impl-section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.impl-section-intro {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.impl-list {
+  list-style: none;
+}
+
+.impl-list li {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.impl-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.impl-list strong {
+  color: var(--primary-dark);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive Implementation Section */
+@media (max-width: 900px) {
+  .impl-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ===== FEEDBACK BUTTON ===== */
+.btn-feedback {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-feedback:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-feedback:active {
+  transform: scale(0.97);
+}
+
+/* PDF Export Button */
+.btn-pdf {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 0.5rem 1.1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-pdf:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-pdf:active {
+  transform: scale(0.97);
+}
+
+/* Modal hidden by default, shown via .is-open */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+/* ===== MODAL DIALOG ===== */
+.modal-dialog {
+  background: var(--white);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  padding: 0 0.25rem;
+}
+
+.modal-close:hover {
+  color: var(--text-main);
+}
+
+/* ===== MODAL BODY (scrollable) ===== */
+.modal-body {
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== DRINK CARD IN MODAL ===== */
+.feedback-drink-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.feedback-drink-card:last-of-type {
+  border-bottom: none;
+}
+
+.feedback-drink-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.feedback-drink-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.feedback-drink-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* ===== SLIDER ===== */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.slider-label-left,
+.slider-label-right {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.feedback-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--primary-blue) 50%, #ddd 50%);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.feedback-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 71, 171, 0.4);
+  transition: transform 0.1s;
+}
+
+.feedback-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.feedback-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 71, 171, 0.4);
+}
+
+.slider-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+/* ===== COMMENT TEXTAREA ===== */
+.feedback-comment {
+  width: 100%;
+  min-height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+  color: var(--text-main);
+}
+
+.feedback-comment:focus {
+  border-color: var(--primary-blue);
+}
+
+/* ===== MODAL FOOTER ===== */
+.modal-footer {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit-feedback {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit-feedback:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-submit-feedback:active {
+  transform: scale(0.97);
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.feedback-success {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.feedback-success h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.feedback-success p {
+  color: var(--text-muted);
+}
+
+/* ===== RESPONSIVE MODAL ===== */
+@media (max-width: 600px) {
+  .feedback-drink-card {
+    flex-direction: column;
+  }
+
+  .feedback-drink-photo {
+    width: 100%;
+    height: 150px;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+}
+
+/* ===== PRINT / PDF STYLES ===== */
+
+@page {
+  size: A4 portrait;
+  margin: 1.4cm 1.4cm 1.4cm 1.4cm;
+}
+
+@media print {
+
+  /* 1. Force backgrounds & colours to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 2. Hide all interactive chrome */
+  .controls,
+  .btn-feedback,
+  .btn-pdf,
+  .modal-overlay,
+  .footer {
+    display: none !important;
+  }
+
+  /* 3. Base reset */
+  html,
+  body {
+    background: #fff !important;
+    margin: 0;
+    padding: 0;
+    font-size: 9pt;
+    color: #111 !important;
+  }
+
+  #app {
+    max-width: 100%;
+  }
+
+  /* 4. Header — clean, flat, blue underline */
+  .header {
+    position: static !important;
+    box-shadow: none !important;
+    border-bottom: 2pt solid #0047AB;
+    padding: 0.3cm 0 0.3cm;
+    margin-bottom: 0.5cm;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 20pt;
+  }
+
+  .sub-logo {
+    font-size: 7pt;
+    letter-spacing: 1pt;
+  }
+
+  /* 5. Landing Hero — side by side, compact */
+  .landing-hero {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.8cm;
+    padding: 0 0 0.5cm;
+    margin: 0;
+    max-width: 100%;
+    background: #fff !important;
+    page-break-after: avoid;
+    border-bottom: 1pt solid #eee;
+    margin-bottom: 0.4cm;
+  }
+
+  .landing-content {
+    flex: 1.3;
+    padding-right: 0;
+    text-align: left !important;
+  }
+
+  .landing-kicker {
+    font-size: 6.5pt;
+    letter-spacing: 1pt;
+    margin-bottom: 0.15cm;
+    color: #0047AB !important;
+  }
+
+  .landing-title {
+    font-size: 17pt;
+    line-height: 1.15;
+    margin-bottom: 0.25cm;
+    color: #111 !important;
+  }
+
+  .landing-text {
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #444 !important;
+    margin-bottom: 0.35cm;
+    max-width: 100%;
+  }
+
+  .features-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5cm;
+    margin-bottom: 0;
+  }
+
+  .feature-item {
+    flex: 1;
+    width: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .feature-icon {
+    margin-bottom: 0.1cm;
+  }
+
+  .feature-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #0047AB !important;
+  }
+
+  .feature-label {
+    font-size: 7pt;
+    color: #333 !important;
+    line-height: 1.3;
+  }
+
+  .learn-more-link {
+    display: none;
+  }
+
+  .landing-image {
+    flex: 0.7;
+    height: 4.8cm;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+
+  .landing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* 6. Section titles */
+  .section-header {
+    max-width: 100%;
+    margin: 0 0 0.3cm;
+    padding: 0 0 0.2cm;
+    border-bottom: 1pt solid #ddd;
+    page-break-after: avoid;
+  }
+
+  .section-header .hero-title {
+    font-size: 13pt;
+    font-weight: 900;
+    color: #0047AB !important;
+    margin: 0;
+  }
+
+  /* 7. Cards — 2-column grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35cm;
+    padding: 0;
+    margin: 0 0 0.5cm;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    border: 1pt solid #dde4f4 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    overflow: hidden;
+    background: #fff !important;
+  }
+
+  .card:hover {
+    transform: none !important;
+  }
+
+  .card-image-container {
+    width: 36%;
+    min-height: 4.8cm;
+    flex-shrink: 0;
+    background-color: #e8f0ff !important;
+    position: relative;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-content {
+    width: 64%;
+    padding: 0.3cm 0.35cm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 10pt;
+    font-weight: 900;
+    margin-bottom: 0.1cm;
+    color: #111 !important;
+  }
+
+  .card-description {
+    font-size: 7.5pt;
+    line-height: 1.4;
+    color: #555 !important;
+    margin-bottom: 0.2cm;
+  }
+
+  .recipe-box {
+    background: #f3f6ff !important;
+    border-left: 3pt solid #0047AB !important;
+    border-radius: 0 !important;
+    padding: 0.2cm 0.25cm;
+    margin-bottom: 0.2cm;
+  }
+
+  .recipe-box h4 {
+    font-size: 6pt;
+    letter-spacing: 0.5pt;
+    color: #0047AB !important;
+    margin-bottom: 0.08cm;
+    text-transform: uppercase;
+  }
+
+  .recipe-box ul {
+    font-size: 7.5pt;
+  }
+
+  .recipe-box li {
+    margin-bottom: 0.04cm;
+    color: #222 !important;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.15cm;
+    border-top: 1pt solid #e8e8e8 !important;
+    padding-top: 0.15cm;
+    margin-top: auto;
+  }
+
+  .metric-label {
+    font-size: 6pt;
+    color: #999 !important;
+    margin-bottom: 1pt;
+  }
+
+  .metric-value {
+    font-size: 10pt;
+    font-weight: 900;
+    color: #0047AB !important;
+  }
+
+  .badge {
+    font-size: 5.5pt;
+    padding: 1.5pt 4pt;
+    border-radius: 0 !important;
+    top: 0.15cm;
+    right: 0.15cm;
+  }
+
+  /* 8. Implementation Section — new page */
+  #implementation {
+    page-break-before: always;
+    background: #fff !important;
+    padding-bottom: 0;
+  }
+
+  .impl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5cm;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .impl-column {
+    gap: 0.4cm;
+  }
+
+  .impl-card {
+    border-radius: 0 !important;
+    border-left: 3pt solid #0047AB !important;
+    box-shadow: none !important;
+    padding: 0.3cm 0.35cm;
+    background: #f8f9fa !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .impl-card-title {
+    font-size: 9.5pt;
+    color: #0047AB !important;
+    margin-bottom: 0.1cm;
+  }
+
+  .impl-card-desc {
+    font-size: 8pt;
+    line-height: 1.5;
+    color: #333 !important;
+  }
+
+  .impl-highlight {
+    border-radius: 0 !important;
+    font-size: 7.5pt;
+    margin-top: 0.15cm;
+    background: #0047AB !important;
+    color: #fff !important;
+  }
+
+  .impl-section-subtitle {
+    font-size: 10.5pt;
+    color: #111 !important;
+    margin-bottom: 0.15cm;
+  }
+
+  .impl-section-intro {
+    font-size: 8pt;
+    color: #555 !important;
+    margin-bottom: 0.25cm;
+  }
+
+  .impl-list li {
+    font-size: 8pt;
+    margin-bottom: 0.25cm;
+    color: #222 !important;
+  }
+
+  .impl-list strong {
+    color: #002E7A !important;
+  }
+
+  /* 9. Kill all transitions */
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

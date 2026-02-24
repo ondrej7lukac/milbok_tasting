@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milbok Tasting Guide</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      try {
+        // Replace YOUR_PUBLIC_KEY with your EmailJS public key
+        emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" });
+      } catch (e) {
+        console.warn('EmailJS not loaded:', e);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="logo-container">
+        <h1 class="logo">MILBOK <span class="sub-logo" data-i18n="sub_logo">DOUBLE MILK</span></h1>
+      </div>
+
+      <div class="controls">
+        <div class="switch-group">
+          <button class="switch-btn active" data-lang="en">EN</button>
+          <button class="switch-btn" data-lang="cz">CZ</button>
+        </div>
+        <div class="switch-group">
+          <button class="switch-btn active" data-currency="usd">$</button>
+          <button class="switch-btn" data-currency="czk">Kč</button>
+        </div>
+        <button class="btn-feedback" id="openFeedback" data-i18n="feedback_btn">Submit Feedback</button>
+        <button class="btn-pdf" id="downloadPdf" data-i18n="pdf_btn">⬇ PDF</button>
+      </div>
+
+
+    </header>
+
+    <main>
+      <!-- New Landing Section -->
+      <section class="landing-hero">
+        <div class="landing-content">
+          <h4 class="landing-kicker" data-i18n="landing_kicker">Discover MILBOK® Double Milk</h4>
+          <h2 class="landing-title" data-i18n="landing_headline">The barista's secret – now available to everyone.</h2>
+          <p class="landing-text" data-i18n="landing_text">
+            You have just received your Milbok to your cafe and you might be wondering, how to properly test it. Here is
+            a guide of the drinks you can't miss and one pro barista tip to try something special.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg> <!-- Shield/Quality placeholder -->
+              </div>
+              <span class="feature-label" data-i18n="feat_sweet">Naturally Sweet</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg> <!-- Clock/Long lasting or placeholder -->
+              </div>
+              <span class="feature-label" data-i18n="feat_nutrition">Double Nutrition</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+                  <path
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg> <!-- Flask/No additives -->
+              </div>
+              <span class="feature-label" data-i18n="feat_additives">No Additives</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg> <!-- Lightning/Versatile -->
+              </div>
+              <span class="feature-label" data-i18n="feat_versatile">Versatile and Creative</span>
+            </div>
+          </div>
+
+          <a href="#tasting-guide" class="learn-more-link">
+            <span data-i18n="learn_more">LEARN MORE</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="landing-image">
+          <img src="./milbok1113.jpg" alt="Milbok Double Milk" class="image-placeholder" />
+        </div>
+      </section>
+
+      <section id="tasting-guide">
+        <div class="section-header">
+          <h2 class="hero-title" data-i18n="guide_title">Tasting Guide</h2>
+        </div>
+      </section>
+
+      <div class="grid-container">
+        <!-- Dirty Coffee -->
+        <article class="card">
+          <div class="card-image-container">
+            <div class="image-placeholder dirty-coffee-bg"></div>
+            <span class="badge" data-i18n="badge_trending">Trending</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title" data-i18n="dirty_title">Dirty Coffee</h3>
+            <p class="card-description" data-i18n="dirty_desc">
+              Hot espresso over cold MILBOK. This refreshing drink, which comes from Asia, creates a stunning visual
+              layer and a unique temperature contrast.
+            </p>
+
+            <div class="recipe-box">
+              <h4 data-i18n="recipe_label">Recipe</h4>
+              <ul>
+                <li><strong data-i18n="recipe_base_label">Base:</strong> <span data-i18n="dirty_recipe_base">Cold MILBOK
+                    (120ml)</span></li>
+                <li><strong data-i18n="recipe_top_label">Top:</strong> <span data-i18n="dirty_recipe_top">Double
+                    Espresso (Hot)</span></li>
+                <li><strong data-i18n="recipe_method_label">Method:</strong> <span data-i18n="dirty_recipe_method">Pour
+                    espresso gently over the back of a spoon to layer.</span></li>
+              </ul>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_cost">Cost Increase</span>
+                <span class="metric-value" data-price-usd="0.15" data-price-czk="4">+<span
+                    class="currency-symbol">$</span><span class="price-val">0.15</span></span>
+              </div>
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_value">Value Increase</span>
+                <span class="metric-value" data-price-usd="1.50" data-price-czk="35">+<span
+                    class="currency-symbol">$</span><span class="price-val">1.50</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Flat Double White -->
+        <article class="card">
+          <div class="card-image-container">
+            <div class="image-placeholder flat-white-bg"></div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title" data-i18n="flat_title">Flat Double White</h3>
+            <p class="card-description" data-i18n="flat_desc">
+              Flat White, but elevated. With double the milk power, you get not only double the coffee kick but a
+              creamier, richer texture that transforms the classic into a luxury experience.
+            </p>
+
+            <div class="recipe-box">
+              <h4 data-i18n="recipe_label">Recipe</h4>
+              <ul>
+                <li><strong data-i18n="recipe_coffee_label">Coffee:</strong> <span data-i18n="flat_recipe_coffee">18g
+                    Espresso</span></li>
+                <li><strong data-i18n="recipe_milk_label">Milk:</strong> <span data-i18n="flat_recipe_milk">120ml Double
+                    Milk (Steamed)</span></li>
+                <li><strong data-i18n="recipe_texture_label">Texture:</strong> <span
+                    data-i18n="flat_recipe_texture">Microfoam, velvety smooth.</span></li>
+              </ul>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_cost">Cost Increase</span>
+                <span class="metric-value" data-price-usd="0.20" data-price-czk="5">+<span
+                    class="currency-symbol">$</span><span class="price-val">0.20</span></span>
+              </div>
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_value">Value Increase</span>
+                <span class="metric-value" data-price-usd="1.00" data-price-czk="25">+<span
+                    class="currency-symbol">$</span><span class="price-val">1.00</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Matcha Double White -->
+        <article class="card">
+          <div class="card-image-container">
+            <div class="image-placeholder matcha-bg"></div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title" data-i18n="matcha_title">Matcha Double White</h3>
+            <p class="card-description" data-i18n="matcha_desc">
+              Same as regular matcha but with double milk for enhanced sweetness and reduced bitterness. A vibrant green
+              drink that tastes as good as it looks.
+            </p>
+
+            <div class="recipe-box">
+              <h4 data-i18n="recipe_label">Recipe</h4>
+              <ul>
+                <li><strong data-i18n="recipe_base_label">Base:</strong> <span data-i18n="matcha_recipe_base">Matcha
+                    Paste (3g + 30ml water)</span></li>
+                <li><strong data-i18n="recipe_milk_label">Milk:</strong> <span data-i18n="matcha_recipe_milk">150ml
+                    Double Milk (Steamed/Iced)</span></li>
+              </ul>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_cost">Cost Increase</span>
+                <span class="metric-value" data-price-usd="0.25" data-price-czk="6">+<span
+                    class="currency-symbol">$</span><span class="price-val">0.25</span></span>
+              </div>
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_value">Value Increase</span>
+                <span class="metric-value" data-price-usd="1.50" data-price-czk="35">+<span
+                    class="currency-symbol">$</span><span class="price-val">1.50</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Barista Tip Drink -->
+        <article class="card">
+          <div class="card-image-container">
+            <div class="image-placeholder cold-brew-bg"></div>
+            <span class="badge tip" data-i18n="badge_tip">Barista Tip</span>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title" data-i18n="cold_title">Cold Brew Cloud</h3>
+            <p class="card-description" data-i18n="cold_desc">
+              A refreshing cold brew topped with a thick, rich Milbok foam. The double milk creates a stable, creamy
+              head that lasts.
+            </p>
+
+            <div class="recipe-box">
+              <h4 data-i18n="recipe_label">Recipe</h4>
+              <ul>
+                <li><strong data-i18n="recipe_base_label">Base:</strong> <span data-i18n="cold_recipe_base">Cold Brew
+                    Coffee (200ml)</span></li>
+                <li><strong data-i18n="recipe_top_label">Top:</strong> <span data-i18n="cold_recipe_top">Cold Milbok
+                    Foam (50ml)</span></li>
+              </ul>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_cost">Cost Increase</span>
+                <span class="metric-value" data-price-usd="0.10" data-price-czk="3">+<span
+                    class="currency-symbol">$</span><span class="price-val">0.10</span></span>
+              </div>
+              <div class="metric">
+                <span class="metric-label" data-i18n="metric_value">Value Increase</span>
+                <span class="metric-value" data-price-usd="1.20" data-price-czk="30">+<span
+                    class="currency-symbol">$</span><span class="price-val">1.20</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <section id="implementation">
+        <div class="section-header">
+          <h2 class="hero-title" data-i18n="impl_title">Implementation in the menu</h2>
+        </div>
+
+        <div class="impl-grid">
+          <!-- Strategie / Menu Implementation -->
+          <div class="impl-column">
+            <div class="impl-card">
+              <h3 class="impl-card-title" data-i18n="impl_addon_title">Add-on Option</h3>
+              <p class="impl-card-desc" data-i18n="impl_addon_desc">Let your customers choose, if they would like to
+                have their drink on double milk as an addon.</p>
+              <div class="impl-highlight">+/- 15 CZK</div>
+            </div>
+
+            <div class="impl-card">
+              <h3 class="impl-card-title" data-i18n="impl_fdw_title">Flat Double White</h3>
+              <p class="impl-card-desc" data-i18n="impl_fdw_desc">Implement flat double white as a drink in the menu for
+                better visibility and better sales.</p>
+            </div>
+
+            <div class="impl-card">
+              <h3 class="impl-card-title" data-i18n="impl_dirty_title">Dirty Coffee</h3>
+              <p class="impl-card-desc" data-i18n="impl_dirty_desc">
+                Dirty coffee is a highly trending drink in the world of coffee, slowly getting famous globally. Asia has
+                proven that texture matters, and our drink became so popular that cafes in Dubai now make only dirty
+                coffee.
+              </p>
+              <span class="badge" data-i18n="badge_trending">Trending</span>
+            </div>
+          </div>
+
+          <!-- Specials / Benefits -->
+          <div class="impl-column">
+            <h3 class="impl-section-subtitle" data-i18n="impl_specials_title">Use it in your specials</h3>
+            <p class="impl-section-intro" data-i18n="impl_specials_intro">Milbok has unseen qualities which widens the
+              usage of milk beverage.</p>
+
+            <ul class="impl-list">
+
+              <li>
+                <strong data-i18n="impl_benefit_layer_title">Layering:</strong>
+                <span data-i18n="impl_benefit_layer">Is able to layer perfectly.</span>
+              </li>
+              <li>
+                <strong data-i18n="impl_benefit_tea_title">Tea Drinks:</strong>
+                <span data-i18n="impl_benefit_tea">Since it is double as thick, it works great with tea drinks. It does
+                  not dilute the flavor and fights wateriness.</span>
+              </li>
+              <li>
+                <strong data-i18n="impl_benefit_iced_title">Iced Beverages:</strong>
+                <span data-i18n="impl_benefit_iced">Works great in iced beverages, leaves room to drink beverage longer,
+                  cause even small dilution with water just brings it to consistency of regular milk.</span>
+              </li>
+              <li>
+                <strong data-i18n="impl_benefit_protein_title">Double Protein:</strong>
+                <span data-i18n="impl_benefit_protein">Double the protein and use of good quality protein improves the
+                  quality of milk foam. Add some % of Milbok to your daily drink and improve quality of your
+                  foam.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Milbok Double Milk. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="modal-overlay">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n="feedback_title">Rate the Drinks</h2>
+        <button class="modal-close" id="closeFeedback" aria-label="Close">&times;</button>
+      </div>
+      <form id="feedbackForm" class="modal-body">
+
+        <!-- Dirty Coffee -->
+        <div class="feedback-drink-card">
+          <div class="feedback-drink-photo dirty-coffee-bg"></div>
+          <div class="feedback-drink-info">
+            <h3 class="feedback-drink-name" data-i18n="dirty_title">Dirty Coffee</h3>
+            <div class="slider-row">
+              <span class="slider-label-left" data-i18n="slider_meh">😐 Meh</span>
+              <input type="range" min="1" max="10" value="5" class="feedback-slider" name="dirty_coffee">
+              <span class="slider-label-right" data-i18n="slider_delicious">Delicious 🤩</span>
+            </div>
+            <div class="slider-value"><span class="slider-val-display">5</span>/10</div>
+            <textarea class="feedback-comment" name="dirty_coffee_comment" placeholder="Optional comment..."
+              data-i18n-placeholder="comment_placeholder"></textarea>
+          </div>
+        </div>
+
+        <!-- Flat Double White -->
+        <div class="feedback-drink-card">
+          <div class="feedback-drink-photo flat-white-bg"></div>
+          <div class="feedback-drink-info">
+            <h3 class="feedback-drink-name" data-i18n="flat_title">Flat Double White</h3>
+            <div class="slider-row">
+              <span class="slider-label-left" data-i18n="slider_meh">😐 Meh</span>
+              <input type="range" min="1" max="10" value="5" class="feedback-slider" name="flat_double_white">
+              <span class="slider-label-right" data-i18n="slider_delicious">Delicious 🤩</span>
+            </div>
+            <div class="slider-value"><span class="slider-val-display">5</span>/10</div>
+            <textarea class="feedback-comment" name="flat_double_white_comment" placeholder="Optional comment..."
+              data-i18n-placeholder="comment_placeholder"></textarea>
+          </div>
+        </div>
+
+        <!-- Matcha Double White -->
+        <div class="feedback-drink-card">
+          <div class="feedback-drink-photo matcha-bg"></div>
+          <div class="feedback-drink-info">
+            <h3 class="feedback-drink-name" data-i18n="matcha_title">Matcha Double White</h3>
+            <div class="slider-row">
+              <span class="slider-label-left" data-i18n="slider_meh">😐 Meh</span>
+              <input type="range" min="1" max="10" value="5" class="feedback-slider" name="matcha_double_white">
+              <span class="slider-label-right" data-i18n="slider_delicious">Delicious 🤩</span>
+            </div>
+            <div class="slider-value"><span class="slider-val-display">5</span>/10</div>
+            <textarea class="feedback-comment" name="matcha_double_white_comment" placeholder="Optional comment..."
+              data-i18n-placeholder="comment_placeholder"></textarea>
+          </div>
+        </div>
+
+        <!-- Cold Brew Cloud -->
+        <div class="feedback-drink-card">
+          <div class="feedback-drink-photo cold-brew-bg"></div>
+          <div class="feedback-drink-info">
+            <h3 class="feedback-drink-name" data-i18n="cold_title">Cold Brew Cloud</h3>
+            <div class="slider-row">
+              <span class="slider-label-left" data-i18n="slider_meh">😐 Meh</span>
+              <input type="range" min="1" max="10" value="5" class="feedback-slider" name="cold_brew_cloud">
+              <span class="slider-label-right" data-i18n="slider_delicious">Delicious 🤩</span>
+            </div>
+            <div class="slider-value"><span class="slider-val-display">5</span>/10</div>
+            <textarea class="feedback-comment" name="cold_brew_cloud_comment" placeholder="Optional comment..."
+              data-i18n-placeholder="comment_placeholder"></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn-submit-feedback" data-i18n="feedback_submit">Submit Ratings</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
