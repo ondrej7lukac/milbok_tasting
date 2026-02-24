@@ -910,7 +910,143 @@ body {
   }
 }
 
-/* ===== PRINT / PDF STYLES ===== */
+/* ===== WHERE TO ORDER SECTION ===== */
+#where-to-order {
+  background: var(--bg-light);
+  padding-bottom: 4rem;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.order-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  border-top: 4px solid var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.order-region {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-company {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.order-link {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.order-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.order-contact {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.order-contact:hover {
+  color: var(--primary-blue);
+}
+
+.order-hours {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .order-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print styles for Where to Order */
+@media print {
+  #where-to-order {
+    page-break-before: always;
+    background: #fff !important;
+    padding-bottom: 0;
+  }
+
+  .order-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5cm;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .order-card {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border-top: 3pt solid #0047AB !important;
+    padding: 0.3cm 0.35cm;
+    break-inside: avoid;
+  }
+
+  .order-region {
+    font-size: 10pt;
+    color: #0047AB !important;
+  }
+
+  .order-company {
+    font-size: 9pt;
+    color: #111 !important;
+  }
+
+  .order-link {
+    font-size: 8.5pt;
+    color: #0047AB !important;
+  }
+
+  .order-contact {
+    font-size: 8pt;
+    color: #444 !important;
+  }
+
+  .order-hours {
+    font-size: 7pt;
+    color: #888 !important;
+  }
+}
+
+
 
 @page {
   size: A4 portrait;

@@ -85,6 +85,9 @@ const translations = {
         feedback_thanks_title: "Thank you! 🍾",
         feedback_thanks_text: "Your feedback helps us improve.",
         pdf_btn: "⬇ PDF",
+        order_title: "Where to Order",
+        order_prague: "Prague",
+        order_morava: "Morava",
     },
 
     cz: {
@@ -170,6 +173,9 @@ const translations = {
         feedback_thanks_title: "Děkujeme! 🍾",
         feedback_thanks_text: "Vaše zpětná vazba nám pomáhá zlepšovat.",
         pdf_btn: "⬇ PDF",
+        order_title: "Kde Objednat",
+        order_prague: "Praha",
+        order_morava: "Morava",
     }
 };
 
